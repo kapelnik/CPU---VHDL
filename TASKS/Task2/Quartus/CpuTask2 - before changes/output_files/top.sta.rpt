@@ -1,0 +1,1379 @@
+TimeQuest Timing Analyzer report for top
+Thu Jun 04 13:19:50 2020
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'clk'
+ 25. Fast Model Hold: 'clk'
+ 26. Fast Model Minimum Pulse Width: 'clk'
+ 27. Setup Times
+ 28. Hold Times
+ 29. Clock to Output Times
+ 30. Minimum Clock to Output Times
+ 31. Multicorner Timing Analysis Summary
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Setup Transfers
+ 37. Hold Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name      ; top                                              ;
+; Device Family      ; Cyclone II                                       ;
+; Device Name        ; EP2C20F484C7                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ; < 0.1%      ;
+;     3-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; SDC1.sdc      ; OK     ; Thu Jun 04 13:19:49 2020 ;
++---------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 8.239  ; 121.37 MHz ; 0.000 ; 4.119 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 121.39 MHz ; 121.39 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------+
+; Slow Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.001 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.648 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 1.812 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                    ;
++-------+-----------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.001 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 8.074      ;
+; 0.033 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 8.042      ;
+; 0.077 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.998      ;
+; 0.083 ; Blast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.992      ;
+; 0.089 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 8.184      ;
+; 0.092 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.181      ;
+; 0.095 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.178      ;
+; 0.101 ; Alast[1]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.005      ; 8.181      ;
+; 0.102 ; Alast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.973      ;
+; 0.107 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 8.166      ;
+; 0.110 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.163      ;
+; 0.113 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.160      ;
+; 0.115 ; Blast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.960      ;
+; 0.126 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 8.147      ;
+; 0.129 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 8.144      ;
+; 0.129 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.144      ;
+; 0.132 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.141      ;
+; 0.132 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.141      ;
+; 0.134 ; Alast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.941      ;
+; 0.134 ; Blast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.941      ;
+; 0.135 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.138      ;
+; 0.159 ; Blast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.916      ;
+; 0.166 ; Blast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.909      ;
+; 0.178 ; Alast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.897      ;
+; 0.184 ; Alast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.891      ;
+; 0.193 ; Blast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.882      ;
+; 0.198 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.882      ;
+; 0.200 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 8.075      ;
+; 0.210 ; Blast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.865      ;
+; 0.216 ; Alast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.859      ;
+; 0.218 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 8.057      ;
+; 0.225 ; Blast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.850      ;
+; 0.233 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.842      ;
+; 0.235 ; Alast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.840      ;
+; 0.237 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 8.038      ;
+; 0.240 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 8.035      ;
+; 0.257 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 8.016      ;
+; 0.260 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.013      ;
+; 0.260 ; Alast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.815      ;
+; 0.263 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 8.010      ;
+; 0.267 ; Alast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.808      ;
+; 0.269 ; Blast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.806      ;
+; 0.269 ; Blast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.806      ;
+; 0.273 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 8.002      ;
+; 0.274 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 8.001      ;
+; 0.276 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.999      ;
+; 0.280 ; Blast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.800      ;
+; 0.291 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.984      ;
+; 0.292 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.983      ;
+; 0.294 ; Alast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.781      ;
+; 0.294 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.981      ;
+; 0.299 ; Alast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.781      ;
+; 0.301 ; Blast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.774      ;
+; 0.310 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.965      ;
+; 0.311 ; Alast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.764      ;
+; 0.311 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.964      ;
+; 0.313 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.962      ;
+; 0.313 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.962      ;
+; 0.314 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.961      ;
+; 0.315 ; Blast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.760      ;
+; 0.316 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.959      ;
+; 0.326 ; Alast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.749      ;
+; 0.329 ; Alast[2]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.005      ; 7.953      ;
+; 0.331 ; Blast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.749      ;
+; 0.334 ; Alast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.741      ;
+; 0.345 ; Blast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.730      ;
+; 0.366 ; Blast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.709      ;
+; 0.368 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.907      ;
+; 0.370 ; Alast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.705      ;
+; 0.370 ; Alast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.705      ;
+; 0.381 ; Alast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.699      ;
+; 0.384 ; Blast[0]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.005      ; 7.898      ;
+; 0.390 ; Blast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.690      ;
+; 0.402 ; Alast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.673      ;
+; 0.403 ; Blast[5]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.672      ;
+; 0.416 ; Alast[1]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.659      ;
+; 0.425 ; Blast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.650      ;
+; 0.432 ; Alast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.648      ;
+; 0.435 ; Blast[5]              ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.640      ;
+; 0.441 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.834      ;
+; 0.442 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.833      ;
+; 0.444 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 7.831      ;
+; 0.446 ; Alast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.629      ;
+; 0.466 ; Blast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.614      ;
+; 0.467 ; Alast[2]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.608      ;
+; 0.472 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.003      ; 7.808      ;
+; 0.472 ; Alast[6]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.005      ; 7.810      ;
+; 0.479 ; Blast[5]              ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.596      ;
+; 0.490 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.003      ; 7.790      ;
+; 0.491 ; Alast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.589      ;
+; 0.498 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.003      ; 7.782      ;
+; 0.501 ; Blast[4]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.574      ;
+; 0.503 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; -0.196     ; 7.578      ;
+; 0.504 ; Alast[5]              ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.571      ;
+; 0.505 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; -0.197     ; 7.575      ;
+; 0.509 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.003      ; 7.771      ;
+; 0.512 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.003      ; 7.768      ;
+; 0.516 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.003      ; 7.764      ;
+; 0.517 ; Blast[0]              ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.204     ; 7.556      ;
+; 0.526 ; Alast[3]              ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.202     ; 7.549      ;
++-------+-----------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                    ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.648 ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; RESlast[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.934      ;
+; 0.774 ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; RESlast[14]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.776 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; RESlast[12]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.980 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; RESlast[13]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.981 ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; RESlast[15]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 1.133 ; OPClast[4]                           ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.419      ;
+; 1.141 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.428      ;
+; 1.197 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; RESlast[10]                          ; clk          ; clk         ; 0.000        ; 0.004      ; 1.487      ;
+; 1.198 ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; RESlast[11]                          ; clk          ; clk         ; 0.000        ; 0.004      ; 1.488      ;
+; 1.213 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.499      ;
+; 1.227 ; OPClast[3]                           ; RESlast[12]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 1.508      ;
+; 1.231 ; OPClast[3]                           ; RESlast[14]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 1.512      ;
+; 1.278 ; OPClast[4]                           ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.564      ;
+; 1.295 ; OPClast[3]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.581      ;
+; 1.306 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.592      ;
+; 1.307 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.595      ;
+; 1.310 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.310 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.595      ;
+; 1.314 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.599      ;
+; 1.335 ; OPClast[2]                           ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.622      ;
+; 1.336 ; OPClast[2]                           ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.624      ;
+; 1.359 ; OPClast[3]                           ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.647      ;
+; 1.359 ; OPClast[3]                           ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.647      ;
+; 1.418 ; OPClast[2]                           ; RESlast[9]                           ; clk          ; clk         ; 0.000        ; -0.007     ; 1.697      ;
+; 1.482 ; OPClast[4]                           ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.768      ;
+; 1.490 ; OPClast[4]                           ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.776      ;
+; 1.492 ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; RESlast[8]                           ; clk          ; clk         ; 0.000        ; -0.003     ; 1.775      ;
+; 1.526 ; OPClast[2]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.812      ;
+; 1.528 ; OPClast[3]                           ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.815      ;
+; 1.528 ; OPClast[3]                           ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.815      ;
+; 1.531 ; OPClast[4]                           ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.818      ;
+; 1.536 ; OPClast[4]                           ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.823      ;
+; 1.555 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.840      ;
+; 1.555 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.840      ;
+; 1.561 ; OPClast[3]                           ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.848      ;
+; 1.563 ; OPClast[3]                           ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.850      ;
+; 1.571 ; OPClast[2]                           ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.858      ;
+; 1.571 ; OPClast[2]                           ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.858      ;
+; 1.575 ; OPClast[2]                           ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.863      ;
+; 1.575 ; OPClast[2]                           ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.863      ;
+; 1.584 ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.009      ; 1.879      ;
+; 1.587 ; OPClast[3]                           ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.875      ;
+; 1.591 ; OPClast[3]                           ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.879      ;
+; 1.615 ; OPClast[3]                           ; RESlast[15]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 1.896      ;
+; 1.617 ; OPClast[3]                           ; RESlast[13]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 1.898      ;
+; 1.707 ; OPClast[4]                           ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.994      ;
+; 1.723 ; OPClast[4]                           ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; -0.003     ; 2.006      ;
+; 1.735 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 2.022      ;
+; 1.751 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 2.039      ;
+; 1.754 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; STATUSlast[1]                        ; clk          ; clk         ; 0.000        ; 0.001      ; 2.041      ;
+; 1.765 ; OPClast[4]                           ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 2.052      ;
+; 1.770 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ; clk          ; clk         ; 0.000        ; -0.006     ; 2.050      ;
+; 1.771 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ; clk          ; clk         ; 0.000        ; -0.006     ; 2.051      ;
+; 1.772 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.052      ;
+; 1.774 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ; clk          ; clk         ; 0.000        ; -0.006     ; 2.054      ;
+; 1.775 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ; clk          ; clk         ; 0.000        ; -0.006     ; 2.055      ;
+; 1.777 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.057      ;
+; 1.783 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.063      ;
+; 1.783 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[10] ; clk          ; clk         ; 0.000        ; -0.006     ; 2.063      ;
+; 1.784 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.064      ;
+; 1.799 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 0.000        ; -0.004     ; 2.081      ;
+; 1.802 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 0.000        ; -0.004     ; 2.084      ;
+; 1.802 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 0.000        ; -0.004     ; 2.084      ;
+; 1.807 ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.010      ; 2.103      ;
+; 1.832 ; OPClast[3]                           ; RESlast[9]                           ; clk          ; clk         ; 0.000        ; -0.007     ; 2.111      ;
+; 1.856 ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.142      ;
+; 1.887 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 0.000        ; -0.005     ; 2.168      ;
+; 1.900 ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.186      ;
+; 1.906 ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.908 ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.194      ;
+; 1.909 ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.195      ;
+; 1.920 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[4]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.200      ;
+; 1.921 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[5]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.201      ;
+; 1.922 ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.208      ;
+; 1.924 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 0.000        ; -0.009     ; 2.201      ;
+; 1.926 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ; clk          ; clk         ; 0.000        ; -0.009     ; 2.203      ;
+; 1.931 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[6]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.211      ;
+; 1.931 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[13] ; clk          ; clk         ; 0.000        ; -0.006     ; 2.211      ;
+; 1.932 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.212      ;
+; 1.933 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[0]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.213      ;
+; 1.936 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[8]  ; clk          ; clk         ; 0.000        ; -0.006     ; 2.216      ;
+; 1.944 ; OPClast[2]                           ; RESlast[15]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 2.225      ;
+; 1.946 ; OPClast[2]                           ; RESlast[13]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 2.227      ;
+; 1.955 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; 0.003      ; 2.244      ;
+; 1.955 ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.241      ;
+; 1.962 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.005      ; 2.253      ;
+; 1.967 ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.253      ;
+; 2.035 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 0.000        ; -0.002     ; 2.319      ;
+; 2.035 ; Alast[4]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 0.000        ; -0.002     ; 2.319      ;
+; 2.036 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 0.000        ; -0.002     ; 2.320      ;
+; 2.036 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 0.000        ; -0.002     ; 2.320      ;
+; 2.036 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 0.000        ; -0.002     ; 2.320      ;
+; 2.038 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; 0.005      ; 2.329      ;
+; 2.045 ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.331      ;
+; 2.048 ; Alast[2]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 0.000        ; 0.004      ; 2.338      ;
+; 2.056 ; OPClast[2]                           ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 2.344      ;
+; 2.056 ; Alast[3]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 0.000        ; 0.003      ; 2.345      ;
+; 2.061 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; 0.003      ; 2.350      ;
+; 2.068 ; OPClast[3]                           ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; -0.002     ; 2.352      ;
+; 2.073 ; OPClast[2]                           ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 2.360      ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                ;
++-------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
++-------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[0]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[1]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[2]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[3]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[4]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[5]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[6]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Alast[7]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[0]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[1]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[2]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[3]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[4]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[5]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[6]                             ;
+; 1.812 ; 4.119        ; 2.307          ; High Pulse Width ; clk   ; Rise       ; Blast[7]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[0]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[1]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[2]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[3]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[4]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[5]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[6]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Alast[7]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[0]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[1]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[2]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[3]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[4]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[5]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[6]                             ;
+; 1.813 ; 4.120        ; 2.307          ; Low Pulse Width  ; clk   ; Rise       ; Blast[7]                             ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[0]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[1]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[2]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[3]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[4]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[5]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[6]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Alast[7]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[0]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[1]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[2]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[3]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[4]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[5]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[6]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blast[7]~_Duplicate_1                ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OPClast[0]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OPClast[1]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OPClast[2]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OPClast[3]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OPClast[4]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[0]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[10]                          ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[11]                          ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[12]                          ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[13]                          ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[14]                          ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[15]                          ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[1]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[2]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[3]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[4]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[5]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[6]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[7]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[8]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; RESlast[9]                           ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; STATUSlast[0]                        ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; STATUSlast[1]                        ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cinlast                              ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[0]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[10] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[13] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[4]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[5]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[6]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[8]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ;
+; 3.008 ; 4.119        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ;
++-------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; clk        ; 5.195 ; 5.195 ; Rise       ; clk             ;
+;  A[0]     ; clk        ; 5.024 ; 5.024 ; Rise       ; clk             ;
+;  A[1]     ; clk        ; 5.195 ; 5.195 ; Rise       ; clk             ;
+;  A[2]     ; clk        ; 5.164 ; 5.164 ; Rise       ; clk             ;
+;  A[3]     ; clk        ; 4.917 ; 4.917 ; Rise       ; clk             ;
+;  A[4]     ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+;  A[5]     ; clk        ; 5.103 ; 5.103 ; Rise       ; clk             ;
+;  A[6]     ; clk        ; 5.152 ; 5.152 ; Rise       ; clk             ;
+;  A[7]     ; clk        ; 4.628 ; 4.628 ; Rise       ; clk             ;
+; B[*]      ; clk        ; 5.204 ; 5.204 ; Rise       ; clk             ;
+;  B[0]     ; clk        ; 5.202 ; 5.202 ; Rise       ; clk             ;
+;  B[1]     ; clk        ; 5.167 ; 5.167 ; Rise       ; clk             ;
+;  B[2]     ; clk        ; 4.895 ; 4.895 ; Rise       ; clk             ;
+;  B[3]     ; clk        ; 4.666 ; 4.666 ; Rise       ; clk             ;
+;  B[4]     ; clk        ; 5.204 ; 5.204 ; Rise       ; clk             ;
+;  B[5]     ; clk        ; 4.617 ; 4.617 ; Rise       ; clk             ;
+;  B[6]     ; clk        ; 4.584 ; 4.584 ; Rise       ; clk             ;
+;  B[7]     ; clk        ; 5.130 ; 5.130 ; Rise       ; clk             ;
+; OPC[*]    ; clk        ; 4.461 ; 4.461 ; Rise       ; clk             ;
+;  OPC[0]   ; clk        ; 3.635 ; 3.635 ; Rise       ; clk             ;
+;  OPC[1]   ; clk        ; 3.614 ; 3.614 ; Rise       ; clk             ;
+;  OPC[2]   ; clk        ; 3.639 ; 3.639 ; Rise       ; clk             ;
+;  OPC[3]   ; clk        ; 3.667 ; 3.667 ; Rise       ; clk             ;
+;  OPC[4]   ; clk        ; 4.461 ; 4.461 ; Rise       ; clk             ;
+; cin       ; clk        ; 4.213 ; 4.213 ; Rise       ; clk             ;
+; ena       ; clk        ; 5.864 ; 5.864 ; Rise       ; clk             ;
+; rst       ; clk        ; 2.216 ; 2.216 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; clk        ; -3.375 ; -3.375 ; Rise       ; clk             ;
+;  A[0]     ; clk        ; -4.749 ; -4.749 ; Rise       ; clk             ;
+;  A[1]     ; clk        ; -4.489 ; -4.489 ; Rise       ; clk             ;
+;  A[2]     ; clk        ; -4.882 ; -4.882 ; Rise       ; clk             ;
+;  A[3]     ; clk        ; -4.252 ; -4.252 ; Rise       ; clk             ;
+;  A[4]     ; clk        ; -3.383 ; -3.383 ; Rise       ; clk             ;
+;  A[5]     ; clk        ; -3.375 ; -3.375 ; Rise       ; clk             ;
+;  A[6]     ; clk        ; -3.952 ; -3.952 ; Rise       ; clk             ;
+;  A[7]     ; clk        ; -4.198 ; -4.198 ; Rise       ; clk             ;
+; B[*]      ; clk        ; -3.391 ; -3.391 ; Rise       ; clk             ;
+;  B[0]     ; clk        ; -4.593 ; -4.593 ; Rise       ; clk             ;
+;  B[1]     ; clk        ; -4.891 ; -4.891 ; Rise       ; clk             ;
+;  B[2]     ; clk        ; -3.391 ; -3.391 ; Rise       ; clk             ;
+;  B[3]     ; clk        ; -3.675 ; -3.675 ; Rise       ; clk             ;
+;  B[4]     ; clk        ; -4.369 ; -4.369 ; Rise       ; clk             ;
+;  B[5]     ; clk        ; -3.945 ; -3.945 ; Rise       ; clk             ;
+;  B[6]     ; clk        ; -3.720 ; -3.720 ; Rise       ; clk             ;
+;  B[7]     ; clk        ; -4.773 ; -4.773 ; Rise       ; clk             ;
+; OPC[*]    ; clk        ; -3.366 ; -3.366 ; Rise       ; clk             ;
+;  OPC[0]   ; clk        ; -3.387 ; -3.387 ; Rise       ; clk             ;
+;  OPC[1]   ; clk        ; -3.366 ; -3.366 ; Rise       ; clk             ;
+;  OPC[2]   ; clk        ; -3.391 ; -3.391 ; Rise       ; clk             ;
+;  OPC[3]   ; clk        ; -3.419 ; -3.419 ; Rise       ; clk             ;
+;  OPC[4]   ; clk        ; -4.213 ; -4.213 ; Rise       ; clk             ;
+; cin       ; clk        ; -3.965 ; -3.965 ; Rise       ; clk             ;
+; ena       ; clk        ; -3.683 ; -3.683 ; Rise       ; clk             ;
+; rst       ; clk        ; -1.920 ; -1.920 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; RES[*]     ; clk        ; 7.787 ; 7.787 ; Rise       ; clk             ;
+;  RES[0]    ; clk        ; 7.787 ; 7.787 ; Rise       ; clk             ;
+;  RES[1]    ; clk        ; 7.197 ; 7.197 ; Rise       ; clk             ;
+;  RES[2]    ; clk        ; 7.304 ; 7.304 ; Rise       ; clk             ;
+;  RES[3]    ; clk        ; 6.925 ; 6.925 ; Rise       ; clk             ;
+;  RES[4]    ; clk        ; 7.511 ; 7.511 ; Rise       ; clk             ;
+;  RES[5]    ; clk        ; 7.275 ; 7.275 ; Rise       ; clk             ;
+;  RES[6]    ; clk        ; 6.957 ; 6.957 ; Rise       ; clk             ;
+;  RES[7]    ; clk        ; 7.535 ; 7.535 ; Rise       ; clk             ;
+;  RES[8]    ; clk        ; 6.952 ; 6.952 ; Rise       ; clk             ;
+;  RES[9]    ; clk        ; 7.601 ; 7.601 ; Rise       ; clk             ;
+;  RES[10]   ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  RES[11]   ; clk        ; 7.541 ; 7.541 ; Rise       ; clk             ;
+;  RES[12]   ; clk        ; 6.944 ; 6.944 ; Rise       ; clk             ;
+;  RES[13]   ; clk        ; 7.504 ; 7.504 ; Rise       ; clk             ;
+;  RES[14]   ; clk        ; 6.955 ; 6.955 ; Rise       ; clk             ;
+;  RES[15]   ; clk        ; 6.936 ; 6.936 ; Rise       ; clk             ;
+; STATUS[*]  ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  STATUS[0] ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  STATUS[1] ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; RES[*]     ; clk        ; 6.925 ; 6.925 ; Rise       ; clk             ;
+;  RES[0]    ; clk        ; 7.787 ; 7.787 ; Rise       ; clk             ;
+;  RES[1]    ; clk        ; 7.197 ; 7.197 ; Rise       ; clk             ;
+;  RES[2]    ; clk        ; 7.304 ; 7.304 ; Rise       ; clk             ;
+;  RES[3]    ; clk        ; 6.925 ; 6.925 ; Rise       ; clk             ;
+;  RES[4]    ; clk        ; 7.511 ; 7.511 ; Rise       ; clk             ;
+;  RES[5]    ; clk        ; 7.275 ; 7.275 ; Rise       ; clk             ;
+;  RES[6]    ; clk        ; 6.957 ; 6.957 ; Rise       ; clk             ;
+;  RES[7]    ; clk        ; 7.535 ; 7.535 ; Rise       ; clk             ;
+;  RES[8]    ; clk        ; 6.952 ; 6.952 ; Rise       ; clk             ;
+;  RES[9]    ; clk        ; 7.601 ; 7.601 ; Rise       ; clk             ;
+;  RES[10]   ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  RES[11]   ; clk        ; 7.541 ; 7.541 ; Rise       ; clk             ;
+;  RES[12]   ; clk        ; 6.944 ; 6.944 ; Rise       ; clk             ;
+;  RES[13]   ; clk        ; 7.504 ; 7.504 ; Rise       ; clk             ;
+;  RES[14]   ; clk        ; 6.955 ; 6.955 ; Rise       ; clk             ;
+;  RES[15]   ; clk        ; 6.936 ; 6.936 ; Rise       ; clk             ;
+; STATUS[*]  ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
+;  STATUS[0] ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  STATUS[1] ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 5.253 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.256 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 2.100 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                    ;
++-------+-----------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 5.253 ; Alast[1]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 3.022      ;
+; 5.286 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 2.981      ;
+; 5.289 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.978      ;
+; 5.291 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 2.976      ;
+; 5.294 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.973      ;
+; 5.294 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.973      ;
+; 5.299 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.968      ;
+; 5.305 ; Blast[0]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.970      ;
+; 5.305 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 2.962      ;
+; 5.306 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 2.961      ;
+; 5.308 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.959      ;
+; 5.309 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.958      ;
+; 5.313 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.954      ;
+; 5.314 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.953      ;
+; 5.339 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.930      ;
+; 5.344 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.925      ;
+; 5.345 ; Alast[2]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.930      ;
+; 5.349 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.920      ;
+; 5.349 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.920      ;
+; 5.350 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.919      ;
+; 5.354 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 8.239        ; -0.004     ; 2.913      ;
+; 5.354 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.915      ;
+; 5.354 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.915      ;
+; 5.355 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.914      ;
+; 5.357 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.910      ;
+; 5.358 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.911      ;
+; 5.359 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.910      ;
+; 5.362 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 8.239        ; -0.004     ; 2.905      ;
+; 5.368 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.901      ;
+; 5.368 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.901      ;
+; 5.369 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.900      ;
+; 5.369 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.900      ;
+; 5.369 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.900      ;
+; 5.370 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.899      ;
+; 5.407 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.862      ;
+; 5.417 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.852      ;
+; 5.417 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.852      ;
+; 5.418 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 8.239        ; -0.002     ; 2.851      ;
+; 5.425 ; Alast[6]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.850      ;
+; 5.433 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.840      ;
+; 5.438 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.835      ;
+; 5.443 ; Alast[3]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.832      ;
+; 5.445 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.828      ;
+; 5.450 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.823      ;
+; 5.452 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.821      ;
+; 5.453 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.820      ;
+; 5.464 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.809      ;
+; 5.465 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.808      ;
+; 5.466 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.807      ;
+; 5.489 ; Alast[7]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.786      ;
+; 5.494 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.780      ;
+; 5.497 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.777      ;
+; 5.498 ; Alast[0]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.777      ;
+; 5.499 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.775      ;
+; 5.501 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.772      ;
+; 5.502 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.772      ;
+; 5.512 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.761      ;
+; 5.513 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.760      ;
+; 5.515 ; Alast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.758      ;
+; 5.528 ; Alast[2]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.745      ;
+; 5.528 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.746      ;
+; 5.531 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.743      ;
+; 5.531 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.743      ;
+; 5.534 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.736      ;
+; 5.536 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.738      ;
+; 5.539 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.731      ;
+; 5.543 ; Alast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.731      ;
+; 5.546 ; Alast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.728      ;
+; 5.556 ; Alast[2]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.718      ;
+; 5.557 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.716      ;
+; 5.559 ; Alast[2]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.715      ;
+; 5.561 ; Alast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.712      ;
+; 5.562 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.711      ;
+; 5.565 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.709      ;
+; 5.568 ; Alast[5]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.001      ; 2.704      ;
+; 5.568 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.702      ;
+; 5.574 ; Alast[2]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.699      ;
+; 5.576 ; Alast[4]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 8.239        ; 0.001      ; 2.696      ;
+; 5.576 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.697      ;
+; 5.577 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.696      ;
+; 5.577 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.693      ;
+; 5.580 ; Alast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.694      ;
+; 5.583 ; Alast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.687      ;
+; 5.585 ; cinlast               ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.004      ; 2.690      ;
+; 5.592 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.678      ;
+; 5.593 ; Alast[2]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 8.239        ; 0.003      ; 2.681      ;
+; 5.596 ; Alast[5]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.677      ;
+; 5.596 ; Alast[2]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 8.239        ; -0.001     ; 2.674      ;
+; 5.599 ; Blast[1]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 8.239        ; -0.005     ; 2.667      ;
+; 5.599 ; Alast[5]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.674      ;
+; 5.604 ; Alast[4]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.669      ;
+; 5.604 ; OPClast[0]            ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 8.239        ; -0.005     ; 2.662      ;
+; 5.606 ; Alast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 8.239        ; -0.005     ; 2.660      ;
+; 5.607 ; Alast[4]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.666      ;
+; 5.611 ; Blast[0]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 8.239        ; -0.005     ; 2.655      ;
+; 5.614 ; Alast[5]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.001      ; 2.658      ;
+; 5.619 ; OPClast[1]            ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 8.239        ; -0.005     ; 2.647      ;
+; 5.622 ; Alast[4]~_Duplicate_1 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 8.239        ; 0.001      ; 2.650      ;
+; 5.625 ; cinlast               ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 8.239        ; 0.002      ; 2.648      ;
+; 5.630 ; Alast[5]~_Duplicate_1 ; STATUSlast[1]                        ; clk          ; clk         ; 8.239        ; 0.003      ; 2.644      ;
++-------+-----------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                    ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.256 ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; RESlast[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.318 ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; RESlast[14]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.470      ;
+; 0.319 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; RESlast[12]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.471      ;
+; 0.371 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; RESlast[13]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.373 ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; RESlast[15]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.426 ; OPClast[4]                           ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.578      ;
+; 0.433 ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.586      ;
+; 0.449 ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; RESlast[11]                          ; clk          ; clk         ; 0.000        ; 0.004      ; 0.605      ;
+; 0.450 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; RESlast[10]                          ; clk          ; clk         ; 0.000        ; 0.004      ; 0.606      ;
+; 0.453 ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.606      ;
+; 0.476 ; OPClast[4]                           ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.628      ;
+; 0.478 ; OPClast[3]                           ; RESlast[12]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 0.625      ;
+; 0.481 ; OPClast[3]                           ; RESlast[14]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 0.628      ;
+; 0.482 ; OPClast[3]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.633      ;
+; 0.495 ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.649      ;
+; 0.505 ; OPClast[2]                           ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.658      ;
+; 0.507 ; OPClast[2]                           ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.660      ;
+; 0.514 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.665      ;
+; 0.516 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 0.000        ; -0.002     ; 0.666      ;
+; 0.518 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.669      ;
+; 0.520 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.671      ;
+; 0.522 ; OPClast[3]                           ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.675      ;
+; 0.523 ; OPClast[3]                           ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.676      ;
+; 0.546 ; OPClast[4]                           ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.548 ; OPClast[4]                           ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.700      ;
+; 0.552 ; OPClast[2]                           ; RESlast[9]                           ; clk          ; clk         ; 0.000        ; -0.007     ; 0.697      ;
+; 0.568 ; OPClast[2]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.719      ;
+; 0.568 ; OPClast[4]                           ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.571 ; OPClast[3]                           ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.724      ;
+; 0.571 ; OPClast[3]                           ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.724      ;
+; 0.572 ; topALU:ALUBuild|ALU:ALUBuild|RES[8]  ; RESlast[8]                           ; clk          ; clk         ; 0.000        ; -0.002     ; 0.722      ;
+; 0.572 ; OPClast[4]                           ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.724      ;
+; 0.577 ; OPClast[3]                           ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.730      ;
+; 0.578 ; OPClast[3]                           ; RESlast[2]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.731      ;
+; 0.582 ; OPClast[2]                           ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.735      ;
+; 0.582 ; OPClast[2]                           ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.735      ;
+; 0.589 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[7]  ; clk          ; clk         ; 0.000        ; -0.002     ; 0.739      ;
+; 0.590 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; clk          ; clk         ; 0.000        ; -0.002     ; 0.740      ;
+; 0.590 ; OPClast[2]                           ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.743      ;
+; 0.592 ; OPClast[2]                           ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.745      ;
+; 0.594 ; OPClast[3]                           ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.747      ;
+; 0.594 ; OPClast[3]                           ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.747      ;
+; 0.606 ; OPClast[3]                           ; RESlast[15]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 0.753      ;
+; 0.608 ; OPClast[3]                           ; RESlast[13]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 0.755      ;
+; 0.608 ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; RESlast[5]                           ; clk          ; clk         ; 0.000        ; 0.009      ; 0.769      ;
+; 0.636 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.789      ;
+; 0.641 ; OPClast[4]                           ; RESlast[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.793      ;
+; 0.644 ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ; STATUSlast[1]                        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.797      ;
+; 0.646 ; OPClast[4]                           ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; -0.004     ; 0.794      ;
+; 0.649 ; OPClast[4]                           ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.666 ; topALU:ALUBuild|ALU:ALUBuild|RES[6]  ; RESlast[6]                           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.820      ;
+; 0.671 ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ; RESlast[1]                           ; clk          ; clk         ; 0.000        ; 0.009      ; 0.832      ;
+; 0.685 ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.837      ;
+; 0.688 ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.840      ;
+; 0.691 ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.843      ;
+; 0.693 ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.845      ;
+; 0.693 ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.845      ;
+; 0.695 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ; clk          ; clk         ; 0.000        ; -0.006     ; 0.841      ;
+; 0.696 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ; clk          ; clk         ; 0.000        ; -0.006     ; 0.842      ;
+; 0.697 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ; clk          ; clk         ; 0.000        ; -0.006     ; 0.843      ;
+; 0.698 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 0.000        ; -0.005     ; 0.845      ;
+; 0.699 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ; clk          ; clk         ; 0.000        ; -0.006     ; 0.845      ;
+; 0.699 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ; clk          ; clk         ; 0.000        ; -0.006     ; 0.845      ;
+; 0.701 ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.853      ;
+; 0.702 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ; clk          ; clk         ; 0.000        ; -0.006     ; 0.848      ;
+; 0.703 ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.855      ;
+; 0.708 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[10] ; clk          ; clk         ; 0.000        ; -0.006     ; 0.854      ;
+; 0.708 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ; clk          ; clk         ; 0.000        ; -0.006     ; 0.854      ;
+; 0.709 ; OPClast[3]                           ; RESlast[9]                           ; clk          ; clk         ; 0.000        ; -0.007     ; 0.854      ;
+; 0.709 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ; clk          ; clk         ; 0.000        ; -0.006     ; 0.855      ;
+; 0.712 ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; 0.002      ; 0.866      ;
+; 0.715 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[9]  ; clk          ; clk         ; 0.000        ; -0.004     ; 0.863      ;
+; 0.715 ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.867      ;
+; 0.718 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ; clk          ; clk         ; 0.000        ; -0.004     ; 0.866      ;
+; 0.719 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; clk          ; clk         ; 0.000        ; -0.004     ; 0.867      ;
+; 0.737 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ; clk          ; clk         ; 0.000        ; -0.009     ; 0.880      ;
+; 0.739 ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; 0.004      ; 0.895      ;
+; 0.740 ; OPClast[4]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ; clk          ; clk         ; 0.000        ; -0.009     ; 0.883      ;
+; 0.741 ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; RESlast[4]                           ; clk          ; clk         ; 0.000        ; 0.005      ; 0.898      ;
+; 0.752 ; Alast[2]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ; clk          ; clk         ; 0.000        ; 0.003      ; 0.907      ;
+; 0.757 ; OPClast[2]                           ; RESlast[7]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.910      ;
+; 0.760 ; Alast[3]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ; clk          ; clk         ; 0.000        ; 0.003      ; 0.915      ;
+; 0.763 ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; 0.002      ; 0.917      ;
+; 0.765 ; OPClast[2]                           ; RESlast[3]                           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.918      ;
+; 0.766 ; OPClast[2]                           ; RESlast[13]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 0.913      ;
+; 0.766 ; OPClast[2]                           ; RESlast[15]                          ; clk          ; clk         ; 0.000        ; -0.005     ; 0.913      ;
+; 0.767 ; Alast[4]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ; clk          ; clk         ; 0.000        ; -0.002     ; 0.917      ;
+; 0.769 ; OPClast[3]                           ; STATUSlast[0]                        ; clk          ; clk         ; 0.000        ; -0.003     ; 0.918      ;
+; 0.772 ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.924      ;
+; 0.775 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[5]  ; clk          ; clk         ; 0.000        ; -0.006     ; 0.921      ;
+; 0.776 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[4]  ; clk          ; clk         ; 0.000        ; -0.006     ; 0.922      ;
+; 0.776 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ; clk          ; clk         ; 0.000        ; -0.002     ; 0.926      ;
+; 0.776 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ; clk          ; clk         ; 0.000        ; -0.002     ; 0.926      ;
+; 0.777 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ; clk          ; clk         ; 0.000        ; -0.002     ; 0.927      ;
+; 0.777 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ; clk          ; clk         ; 0.000        ; -0.002     ; 0.927      ;
+; 0.778 ; topALU:ALUBuild|ALU:ALUBuild|ACC[6]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.930      ;
+; 0.782 ; Alast[1]~_Duplicate_1                ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ; clk          ; clk         ; 0.000        ; -0.005     ; 0.929      ;
+; 0.783 ; topALU:ALUBuild|ALU:ALUBuild|ACC[0]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.935      ;
+; 0.785 ; OPClast[1]                           ; topALU:ALUBuild|ALU:ALUBuild|ACC[13] ; clk          ; clk         ; 0.000        ; -0.006     ; 0.931      ;
+; 0.785 ; topALU:ALUBuild|ALU:ALUBuild|ACC[4]  ; topALU:ALUBuild|ALU:ALUBuild|ACC[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.937      ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                ;
++-------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
++-------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[0]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[1]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[2]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[3]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[4]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[5]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[6]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Alast[7]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[0]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[1]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[2]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[3]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[4]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[5]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[6]                             ;
+; 2.100 ; 4.119        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Blast[7]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[0]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[1]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[2]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[3]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[4]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[5]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[6]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Alast[7]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[0]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[1]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[2]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[3]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[4]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[5]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[6]                             ;
+; 2.101 ; 4.120        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Blast[7]                             ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[0]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[1]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[2]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[3]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[4]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[5]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[6]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Alast[7]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[0]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[1]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[2]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[3]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[4]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[5]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[6]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blast[7]~_Duplicate_1                ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OPClast[0]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OPClast[1]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OPClast[2]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OPClast[3]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OPClast[4]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[0]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[10]                          ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[11]                          ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[12]                          ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[13]                          ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[14]                          ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[15]                          ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[1]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[2]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[3]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[4]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[5]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[6]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[7]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[8]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; RESlast[9]                           ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; STATUSlast[0]                        ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; STATUSlast[1]                        ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cinlast                              ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[0]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[10] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[11] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[12] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[13] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[14] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[15] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[1]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[2]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[3]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[4]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[5]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[6]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[7]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[8]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|ACC[9]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[0]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[10] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[11] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[12] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[13] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[14] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[15] ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[1]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[2]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[3]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[4]  ;
+; 3.119 ; 4.119        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; topALU:ALUBuild|ALU:ALUBuild|RES[5]  ;
++-------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; clk        ; 2.277 ; 2.277 ; Rise       ; clk             ;
+;  A[0]     ; clk        ; 2.220 ; 2.220 ; Rise       ; clk             ;
+;  A[1]     ; clk        ; 2.201 ; 2.201 ; Rise       ; clk             ;
+;  A[2]     ; clk        ; 2.277 ; 2.277 ; Rise       ; clk             ;
+;  A[3]     ; clk        ; 2.093 ; 2.093 ; Rise       ; clk             ;
+;  A[4]     ; clk        ; 2.216 ; 2.216 ; Rise       ; clk             ;
+;  A[5]     ; clk        ; 2.183 ; 2.183 ; Rise       ; clk             ;
+;  A[6]     ; clk        ; 2.162 ; 2.162 ; Rise       ; clk             ;
+;  A[7]     ; clk        ; 2.014 ; 2.014 ; Rise       ; clk             ;
+; B[*]      ; clk        ; 2.244 ; 2.244 ; Rise       ; clk             ;
+;  B[0]     ; clk        ; 2.244 ; 2.244 ; Rise       ; clk             ;
+;  B[1]     ; clk        ; 2.227 ; 2.227 ; Rise       ; clk             ;
+;  B[2]     ; clk        ; 2.092 ; 2.092 ; Rise       ; clk             ;
+;  B[3]     ; clk        ; 2.017 ; 2.017 ; Rise       ; clk             ;
+;  B[4]     ; clk        ; 2.215 ; 2.215 ; Rise       ; clk             ;
+;  B[5]     ; clk        ; 1.987 ; 1.987 ; Rise       ; clk             ;
+;  B[6]     ; clk        ; 1.954 ; 1.954 ; Rise       ; clk             ;
+;  B[7]     ; clk        ; 2.223 ; 2.223 ; Rise       ; clk             ;
+; OPC[*]    ; clk        ; 2.029 ; 2.029 ; Rise       ; clk             ;
+;  OPC[0]   ; clk        ; 1.667 ; 1.667 ; Rise       ; clk             ;
+;  OPC[1]   ; clk        ; 1.651 ; 1.651 ; Rise       ; clk             ;
+;  OPC[2]   ; clk        ; 1.701 ; 1.701 ; Rise       ; clk             ;
+;  OPC[3]   ; clk        ; 1.697 ; 1.697 ; Rise       ; clk             ;
+;  OPC[4]   ; clk        ; 2.029 ; 2.029 ; Rise       ; clk             ;
+; cin       ; clk        ; 1.890 ; 1.890 ; Rise       ; clk             ;
+; ena       ; clk        ; 2.602 ; 2.602 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.454 ; 0.454 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; clk        ; -1.538 ; -1.538 ; Rise       ; clk             ;
+;  A[0]     ; clk        ; -2.098 ; -2.098 ; Rise       ; clk             ;
+;  A[1]     ; clk        ; -1.959 ; -1.959 ; Rise       ; clk             ;
+;  A[2]     ; clk        ; -2.155 ; -2.155 ; Rise       ; clk             ;
+;  A[3]     ; clk        ; -1.915 ; -1.915 ; Rise       ; clk             ;
+;  A[4]     ; clk        ; -1.574 ; -1.574 ; Rise       ; clk             ;
+;  A[5]     ; clk        ; -1.538 ; -1.538 ; Rise       ; clk             ;
+;  A[6]     ; clk        ; -1.742 ; -1.742 ; Rise       ; clk             ;
+;  A[7]     ; clk        ; -1.894 ; -1.894 ; Rise       ; clk             ;
+; B[*]      ; clk        ; -1.554 ; -1.554 ; Rise       ; clk             ;
+;  B[0]     ; clk        ; -2.074 ; -2.074 ; Rise       ; clk             ;
+;  B[1]     ; clk        ; -2.107 ; -2.107 ; Rise       ; clk             ;
+;  B[2]     ; clk        ; -1.554 ; -1.554 ; Rise       ; clk             ;
+;  B[3]     ; clk        ; -1.668 ; -1.668 ; Rise       ; clk             ;
+;  B[4]     ; clk        ; -2.003 ; -2.003 ; Rise       ; clk             ;
+;  B[5]     ; clk        ; -1.766 ; -1.766 ; Rise       ; clk             ;
+;  B[6]     ; clk        ; -1.687 ; -1.687 ; Rise       ; clk             ;
+;  B[7]     ; clk        ; -2.103 ; -2.103 ; Rise       ; clk             ;
+; OPC[*]    ; clk        ; -1.531 ; -1.531 ; Rise       ; clk             ;
+;  OPC[0]   ; clk        ; -1.547 ; -1.547 ; Rise       ; clk             ;
+;  OPC[1]   ; clk        ; -1.531 ; -1.531 ; Rise       ; clk             ;
+;  OPC[2]   ; clk        ; -1.581 ; -1.581 ; Rise       ; clk             ;
+;  OPC[3]   ; clk        ; -1.577 ; -1.577 ; Rise       ; clk             ;
+;  OPC[4]   ; clk        ; -1.909 ; -1.909 ; Rise       ; clk             ;
+; cin       ; clk        ; -1.770 ; -1.770 ; Rise       ; clk             ;
+; ena       ; clk        ; -1.715 ; -1.715 ; Rise       ; clk             ;
+; rst       ; clk        ; -0.312 ; -0.312 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; RES[*]     ; clk        ; 4.127 ; 4.127 ; Rise       ; clk             ;
+;  RES[0]    ; clk        ; 4.127 ; 4.127 ; Rise       ; clk             ;
+;  RES[1]    ; clk        ; 3.889 ; 3.889 ; Rise       ; clk             ;
+;  RES[2]    ; clk        ; 3.959 ; 3.959 ; Rise       ; clk             ;
+;  RES[3]    ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  RES[4]    ; clk        ; 4.017 ; 4.017 ; Rise       ; clk             ;
+;  RES[5]    ; clk        ; 3.939 ; 3.939 ; Rise       ; clk             ;
+;  RES[6]    ; clk        ; 3.821 ; 3.821 ; Rise       ; clk             ;
+;  RES[7]    ; clk        ; 4.035 ; 4.035 ; Rise       ; clk             ;
+;  RES[8]    ; clk        ; 3.807 ; 3.807 ; Rise       ; clk             ;
+;  RES[9]    ; clk        ; 3.971 ; 3.971 ; Rise       ; clk             ;
+;  RES[10]   ; clk        ; 4.037 ; 4.037 ; Rise       ; clk             ;
+;  RES[11]   ; clk        ; 4.040 ; 4.040 ; Rise       ; clk             ;
+;  RES[12]   ; clk        ; 3.802 ; 3.802 ; Rise       ; clk             ;
+;  RES[13]   ; clk        ; 4.007 ; 4.007 ; Rise       ; clk             ;
+;  RES[14]   ; clk        ; 3.808 ; 3.808 ; Rise       ; clk             ;
+;  RES[15]   ; clk        ; 3.793 ; 3.793 ; Rise       ; clk             ;
+; STATUS[*]  ; clk        ; 3.905 ; 3.905 ; Rise       ; clk             ;
+;  STATUS[0] ; clk        ; 3.905 ; 3.905 ; Rise       ; clk             ;
+;  STATUS[1] ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; RES[*]     ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  RES[0]    ; clk        ; 4.127 ; 4.127 ; Rise       ; clk             ;
+;  RES[1]    ; clk        ; 3.889 ; 3.889 ; Rise       ; clk             ;
+;  RES[2]    ; clk        ; 3.959 ; 3.959 ; Rise       ; clk             ;
+;  RES[3]    ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  RES[4]    ; clk        ; 4.017 ; 4.017 ; Rise       ; clk             ;
+;  RES[5]    ; clk        ; 3.939 ; 3.939 ; Rise       ; clk             ;
+;  RES[6]    ; clk        ; 3.821 ; 3.821 ; Rise       ; clk             ;
+;  RES[7]    ; clk        ; 4.035 ; 4.035 ; Rise       ; clk             ;
+;  RES[8]    ; clk        ; 3.807 ; 3.807 ; Rise       ; clk             ;
+;  RES[9]    ; clk        ; 3.971 ; 3.971 ; Rise       ; clk             ;
+;  RES[10]   ; clk        ; 4.037 ; 4.037 ; Rise       ; clk             ;
+;  RES[11]   ; clk        ; 4.040 ; 4.040 ; Rise       ; clk             ;
+;  RES[12]   ; clk        ; 3.802 ; 3.802 ; Rise       ; clk             ;
+;  RES[13]   ; clk        ; 4.007 ; 4.007 ; Rise       ; clk             ;
+;  RES[14]   ; clk        ; 3.808 ; 3.808 ; Rise       ; clk             ;
+;  RES[15]   ; clk        ; 3.793 ; 3.793 ; Rise       ; clk             ;
+; STATUS[*]  ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+;  STATUS[0] ; clk        ; 3.905 ; 3.905 ; Rise       ; clk             ;
+;  STATUS[1] ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                         ;
++------------------+-------+-------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 0.001 ; 0.256 ; N/A      ; N/A     ; 1.812               ;
+;  clk             ; 0.001 ; 0.256 ; N/A      ; N/A     ; 1.812               ;
+; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk             ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+-------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; clk        ; 5.195 ; 5.195 ; Rise       ; clk             ;
+;  A[0]     ; clk        ; 5.024 ; 5.024 ; Rise       ; clk             ;
+;  A[1]     ; clk        ; 5.195 ; 5.195 ; Rise       ; clk             ;
+;  A[2]     ; clk        ; 5.164 ; 5.164 ; Rise       ; clk             ;
+;  A[3]     ; clk        ; 4.917 ; 4.917 ; Rise       ; clk             ;
+;  A[4]     ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+;  A[5]     ; clk        ; 5.103 ; 5.103 ; Rise       ; clk             ;
+;  A[6]     ; clk        ; 5.152 ; 5.152 ; Rise       ; clk             ;
+;  A[7]     ; clk        ; 4.628 ; 4.628 ; Rise       ; clk             ;
+; B[*]      ; clk        ; 5.204 ; 5.204 ; Rise       ; clk             ;
+;  B[0]     ; clk        ; 5.202 ; 5.202 ; Rise       ; clk             ;
+;  B[1]     ; clk        ; 5.167 ; 5.167 ; Rise       ; clk             ;
+;  B[2]     ; clk        ; 4.895 ; 4.895 ; Rise       ; clk             ;
+;  B[3]     ; clk        ; 4.666 ; 4.666 ; Rise       ; clk             ;
+;  B[4]     ; clk        ; 5.204 ; 5.204 ; Rise       ; clk             ;
+;  B[5]     ; clk        ; 4.617 ; 4.617 ; Rise       ; clk             ;
+;  B[6]     ; clk        ; 4.584 ; 4.584 ; Rise       ; clk             ;
+;  B[7]     ; clk        ; 5.130 ; 5.130 ; Rise       ; clk             ;
+; OPC[*]    ; clk        ; 4.461 ; 4.461 ; Rise       ; clk             ;
+;  OPC[0]   ; clk        ; 3.635 ; 3.635 ; Rise       ; clk             ;
+;  OPC[1]   ; clk        ; 3.614 ; 3.614 ; Rise       ; clk             ;
+;  OPC[2]   ; clk        ; 3.639 ; 3.639 ; Rise       ; clk             ;
+;  OPC[3]   ; clk        ; 3.667 ; 3.667 ; Rise       ; clk             ;
+;  OPC[4]   ; clk        ; 4.461 ; 4.461 ; Rise       ; clk             ;
+; cin       ; clk        ; 4.213 ; 4.213 ; Rise       ; clk             ;
+; ena       ; clk        ; 5.864 ; 5.864 ; Rise       ; clk             ;
+; rst       ; clk        ; 2.216 ; 2.216 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; clk        ; -1.538 ; -1.538 ; Rise       ; clk             ;
+;  A[0]     ; clk        ; -2.098 ; -2.098 ; Rise       ; clk             ;
+;  A[1]     ; clk        ; -1.959 ; -1.959 ; Rise       ; clk             ;
+;  A[2]     ; clk        ; -2.155 ; -2.155 ; Rise       ; clk             ;
+;  A[3]     ; clk        ; -1.915 ; -1.915 ; Rise       ; clk             ;
+;  A[4]     ; clk        ; -1.574 ; -1.574 ; Rise       ; clk             ;
+;  A[5]     ; clk        ; -1.538 ; -1.538 ; Rise       ; clk             ;
+;  A[6]     ; clk        ; -1.742 ; -1.742 ; Rise       ; clk             ;
+;  A[7]     ; clk        ; -1.894 ; -1.894 ; Rise       ; clk             ;
+; B[*]      ; clk        ; -1.554 ; -1.554 ; Rise       ; clk             ;
+;  B[0]     ; clk        ; -2.074 ; -2.074 ; Rise       ; clk             ;
+;  B[1]     ; clk        ; -2.107 ; -2.107 ; Rise       ; clk             ;
+;  B[2]     ; clk        ; -1.554 ; -1.554 ; Rise       ; clk             ;
+;  B[3]     ; clk        ; -1.668 ; -1.668 ; Rise       ; clk             ;
+;  B[4]     ; clk        ; -2.003 ; -2.003 ; Rise       ; clk             ;
+;  B[5]     ; clk        ; -1.766 ; -1.766 ; Rise       ; clk             ;
+;  B[6]     ; clk        ; -1.687 ; -1.687 ; Rise       ; clk             ;
+;  B[7]     ; clk        ; -2.103 ; -2.103 ; Rise       ; clk             ;
+; OPC[*]    ; clk        ; -1.531 ; -1.531 ; Rise       ; clk             ;
+;  OPC[0]   ; clk        ; -1.547 ; -1.547 ; Rise       ; clk             ;
+;  OPC[1]   ; clk        ; -1.531 ; -1.531 ; Rise       ; clk             ;
+;  OPC[2]   ; clk        ; -1.581 ; -1.581 ; Rise       ; clk             ;
+;  OPC[3]   ; clk        ; -1.577 ; -1.577 ; Rise       ; clk             ;
+;  OPC[4]   ; clk        ; -1.909 ; -1.909 ; Rise       ; clk             ;
+; cin       ; clk        ; -1.770 ; -1.770 ; Rise       ; clk             ;
+; ena       ; clk        ; -1.715 ; -1.715 ; Rise       ; clk             ;
+; rst       ; clk        ; -0.312 ; -0.312 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; RES[*]     ; clk        ; 7.787 ; 7.787 ; Rise       ; clk             ;
+;  RES[0]    ; clk        ; 7.787 ; 7.787 ; Rise       ; clk             ;
+;  RES[1]    ; clk        ; 7.197 ; 7.197 ; Rise       ; clk             ;
+;  RES[2]    ; clk        ; 7.304 ; 7.304 ; Rise       ; clk             ;
+;  RES[3]    ; clk        ; 6.925 ; 6.925 ; Rise       ; clk             ;
+;  RES[4]    ; clk        ; 7.511 ; 7.511 ; Rise       ; clk             ;
+;  RES[5]    ; clk        ; 7.275 ; 7.275 ; Rise       ; clk             ;
+;  RES[6]    ; clk        ; 6.957 ; 6.957 ; Rise       ; clk             ;
+;  RES[7]    ; clk        ; 7.535 ; 7.535 ; Rise       ; clk             ;
+;  RES[8]    ; clk        ; 6.952 ; 6.952 ; Rise       ; clk             ;
+;  RES[9]    ; clk        ; 7.601 ; 7.601 ; Rise       ; clk             ;
+;  RES[10]   ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  RES[11]   ; clk        ; 7.541 ; 7.541 ; Rise       ; clk             ;
+;  RES[12]   ; clk        ; 6.944 ; 6.944 ; Rise       ; clk             ;
+;  RES[13]   ; clk        ; 7.504 ; 7.504 ; Rise       ; clk             ;
+;  RES[14]   ; clk        ; 6.955 ; 6.955 ; Rise       ; clk             ;
+;  RES[15]   ; clk        ; 6.936 ; 6.936 ; Rise       ; clk             ;
+; STATUS[*]  ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  STATUS[0] ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  STATUS[1] ; clk        ; 7.171 ; 7.171 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; RES[*]     ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  RES[0]    ; clk        ; 4.127 ; 4.127 ; Rise       ; clk             ;
+;  RES[1]    ; clk        ; 3.889 ; 3.889 ; Rise       ; clk             ;
+;  RES[2]    ; clk        ; 3.959 ; 3.959 ; Rise       ; clk             ;
+;  RES[3]    ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  RES[4]    ; clk        ; 4.017 ; 4.017 ; Rise       ; clk             ;
+;  RES[5]    ; clk        ; 3.939 ; 3.939 ; Rise       ; clk             ;
+;  RES[6]    ; clk        ; 3.821 ; 3.821 ; Rise       ; clk             ;
+;  RES[7]    ; clk        ; 4.035 ; 4.035 ; Rise       ; clk             ;
+;  RES[8]    ; clk        ; 3.807 ; 3.807 ; Rise       ; clk             ;
+;  RES[9]    ; clk        ; 3.971 ; 3.971 ; Rise       ; clk             ;
+;  RES[10]   ; clk        ; 4.037 ; 4.037 ; Rise       ; clk             ;
+;  RES[11]   ; clk        ; 4.040 ; 4.040 ; Rise       ; clk             ;
+;  RES[12]   ; clk        ; 3.802 ; 3.802 ; Rise       ; clk             ;
+;  RES[13]   ; clk        ; 4.007 ; 4.007 ; Rise       ; clk             ;
+;  RES[14]   ; clk        ; 3.808 ; 3.808 ; Rise       ; clk             ;
+;  RES[15]   ; clk        ; 3.793 ; 3.793 ; Rise       ; clk             ;
+; STATUS[*]  ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+;  STATUS[0] ; clk        ; 3.905 ; 3.905 ; Rise       ; clk             ;
+;  STATUS[1] ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 5244     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 5244     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 24    ; 24   ;
+; Unconstrained Input Port Paths  ; 182   ; 182  ;
+; Unconstrained Output Ports      ; 18    ; 18   ;
+; Unconstrained Output Port Paths ; 18    ; 18   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Thu Jun 04 13:19:48 2020
+Info: Command: quartus_sta top -c top
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'SDC1.sdc'
+Warning (332125): Found combinational loop of 7 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~2|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~0|datad"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~0|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~1|dataa"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~1|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~2|dataa"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux0~2|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux1~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux1~3|dataa"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux2~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux2~3|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux3~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux3~3|dataa"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux4~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux4~3|dataa"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux5~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux5~3|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux6~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux6~3|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux7~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux7~3|dataa"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux8~3|combout"
+    Warning (332126): Node "ALUBuild|ShifterBuild|Mux8~3|dataa"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 0.001
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.001         0.000 clk 
+Info (332146): Worst-case hold slack is 0.648
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.648         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 1.812
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.812         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 5.253
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     5.253         0.000 clk 
+Info (332146): Worst-case hold slack is 0.256
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.256         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 2.100
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     2.100         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4607 megabytes
+    Info: Processing ended: Thu Jun 04 13:19:50 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
